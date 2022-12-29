@@ -1,0 +1,58 @@
+
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+
+<title>Thymeleaf</title>
+<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+
+</head>
+<body>
+<section>
+	<h1 class="text-center">Welcome to Thymeleaf</h1>
+	<h2 class="text-center" th:text="${#strings.toUpperCase(name)}"></h2>
+	<div class="text-center" th:each="n,status:${list}">
+		<span th:style="${status.odd}?'font-weight:bold':' '"
+			th:text="${status.index+1}+ ' '+${n}"></span>
+	</div>
+	<div class="text-center" th:each="n1,status:${list2}">
+		<span th:style="${status.even}?'font-weight:bold':' '"
+			th:text="${status.index+1}+ ' '+${n1}"></span>
+	</div>
+	<h1 class="text-center" th:if="${gender}=='F'">Male</h1>
+	<h1 class="text-center" th:unless="${gender}=='F'">Female</h1>
+	<div class="text-center" th:switch="${#lists.size(list)}">
+		<h1 th:case="'0'">0(Zero)</h1>
+		<h1 th:case="'1'">1(One)</h1>
+		<h1 th:case="'2'">2(Two)</h1>
+
+
+
+	</div>
+
+
+
+</section>
+
+    
+	<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+	<script th:src="@{/js/jquery.countdown.js}"></script>
+	<!-- isotope -->
+	<script th:src="@{/js/jquery.isotope-3.0.6.min.js}"></script>
+
+	<script th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+	<!-- mean menu -->
+	<script th:src="@{/js/jquery.meanmenu.min.js}"></script>
+	<!-- sticker js -->
+	<!-- main js -->
+	<!-- count down -->
+
+</body>
+</html>
+
