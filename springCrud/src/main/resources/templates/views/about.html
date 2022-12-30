@@ -1,20 +1,13 @@
 
-<!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="views/base::layout(~{::.sec},~{::title})">
 <head>
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<!-- Bootstrap CSS -->
-
-<title>Thymeleaf</title>
-<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
-
+<meta charset="ISO-8859-1">
+<title>About page</title>
 </head>
 <body>
-<section>
+<section class="sec container">
 	<h1 class="text-center">Welcome to Thymeleaf</h1>
 	<h2 class="text-center" th:text="${#strings.toUpperCase(name)}"></h2>
 	<div class="text-center" th:each="n,status:${list}">
@@ -41,17 +34,7 @@
 </section>
 
     
-	<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
-	<script th:src="@{/js/jquery.countdown.js}"></script>
-	<!-- isotope -->
-	<script th:src="@{/js/jquery.isotope-3.0.6.min.js}"></script>
-
-	<script th:src="@{/js/jquery.magnific-popup.min.js}"></script>
-	<!-- mean menu -->
-	<script th:src="@{/js/jquery.meanmenu.min.js}"></script>
-	<!-- sticker js -->
-	<!-- main js -->
-	<!-- count down -->
+	
 
 </body>
 </html>
