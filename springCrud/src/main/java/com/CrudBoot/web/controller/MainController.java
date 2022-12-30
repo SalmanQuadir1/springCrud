@@ -22,10 +22,10 @@ public class MainController {
 		m.addAttribute("gender", 'F');
 		return "views/about";
 	}
-	@RequestMapping("/base")
+
+	@RequestMapping("/contacts")
 	public String homePage() {
-		
-		
-		return "views/base";
+
+		return "views/contacts";
 	}
 }
