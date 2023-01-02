@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -14,10 +15,10 @@ public class MainController {
 	public String home(Model m) {
 		m.addAttribute("name", "Salman Quadir");
 		List<String> list = new ArrayList<String>();
-		list.add("salman");
-		list.add("Quadir");
+		list.add("item1");
+		list.add("item2");
 		m.addAttribute("list", list);
-		List<String> li1 = List.of("salman", "Quadir");
+		List<String> li1 = List.of("ListItem1", "ListItem2");
 		m.addAttribute("list2", li1);
 		m.addAttribute("gender", 'F');
 		return "views/about";
@@ -32,5 +33,10 @@ public class MainController {
 	public String homepg() {
 
 		return "index";
+	}
+	@GetMapping("/services")
+	public String Services() {
+
+		return "views/services";
 	}
 }

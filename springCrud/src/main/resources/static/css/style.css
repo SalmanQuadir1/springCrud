@@ -1,9 +1,18 @@
-body{
-	background-color:lightgrey;
+body {
+	background-color: lightgrey;
 }
-.l-5{
-	margin-left:10rem !important;
+
+.l-5 {
+	margin-left: 10rem !important;
 }
-a:hover{
-	color:red !important;
+
+a:hover {
+	color: red !important;
+}
+
+p {
+	font-family: 'Dancing Script', cursive;
+	font-family: 'Satisfy', cursive;
+	font-family: 'Sevillana', cursive;
+	font-size:1.7rem;
 }
