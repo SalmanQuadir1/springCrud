@@ -29,11 +29,7 @@ public class MainController {
 
 		return "views/contacts";
 	}
-	@RequestMapping("/home")
-	public String homepg() {
-
-		return "index";
-	}
+	
 	@GetMapping("/services")
 	public String Services() {
 

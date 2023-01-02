@@ -1,25 +1,56 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-	th:replace="views/base::layout(~{::.sec},~{::title})">
+	th:replace="fragments/loginHeader::layout(~{::.sec},~{::title})">
 <head>
 <meta charset="ISO-8859-1">
-<title>Home page</title>
+<title>Login</title>
 </head>
 <body>
+	<div class="container ">
+		<section class="sec  mt-4 l-5 w-50 " data-aos="fade-up"
+			data-aos-easing="linear" data-aos-duration="1000">
 
-	<section class="sec text-center mt-4">
 
-		<h1 class="font-italic">Homepage</h1>
-		<p class="text-justify p-5">Lorem ipsum is a dummy text used as a
-			placeholder in the publishing and graphic design industries. It's
-			used to demonstrate the visual form of a document or a typeface,
-			without the need for the actual content. Lorem ipsum is derived from
-			a passage of Latin text written by the Roman philosopher Cicero in 45
-			BC, but the text has been modified and rearranged over the years to
-			make it more suitable for use as placeholder text. The most common
-			version of Lorem ipsum begins with the follow</p>
-		
-	</section>
+			<form class="bg-white shadow p-5 " method="post"
+				th:action="@{/login}" th:object="${loginData}">
+				<h2 class="font-italic text-center">Login</h2>
+				<div class="form-group">
+					<label for="staticEmail" class=" col-form-label">Email</label> <input
+						type="text" name="email" th:value="${loginData.email}"
+						class="form-control" id="staticEmail">
+					<div th:each="e : ${#fields.errors('email')}">
+						<small class="text-danger" th:text="${e}"></small>
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<label for="inputPassword" class=" col-form-label">Password</label>
+					<input type="password" name="password" class="form-control"
+						id="inputPassword" th:value="${loginData.password}"
+						placeholder="Password">
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="checkbox"
+						id="inlineCheckbox1" name="agreed"
+						th:checked="${loginData.agreed}"> <label
+						class="form-check-label" for="inlineCheckbox1">Agree on
+						Terms and Conditions </label>
+
+				</div>
+				<div>
+					<small class="text-danger"
+						th:each="e : ${#fields.errors('agreed')}" th:text="${e}"></small>
+				</div>
+
+
+				<div class="text-center mt-4">
+					<button class="btn btn-outline-danger">Login</button>
+				</div>
+			</form>
+
+		</section>
+	</div>
 
 </body>
 </html>
